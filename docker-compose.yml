@@ -1,9 +1,9 @@
 version: '2.2'
 
 services:
-  valley:
+  stardew-mp:
     build: docker
-    container_name: stardew
+    container_name: stardew-mp
     environment:
       - "VNC_PASSWORD=insecure"
       - "DISPLAY_HEIGHT=900"
@@ -53,10 +53,10 @@ services:
       - ENABLE_SAVEBACKUP_MOD=${ENABLE_SAVEBACKUP_MOD-true}
 
       ## Chat Commands mod
-      - ENABLE_CHATCOMMANDS_MOD=${ENABLE_CHATCOMMANDS_MOD-false}
+      - ENABLE_CHATCOMMANDS_MOD=${ENABLE_CHATCOMMANDS_MOD-true}
 
       ## Console Commands mod
-      - ENABLE_CONSOLECOMMANDS_MOD=${ENABLE_CONSOLECOMMANDS_MOD-false}
+      - ENABLE_CONSOLECOMMANDS_MOD=${ENABLE_CONSOLECOMMANDS_MOD-true}
 
       ## Time Speed mod
       - ENABLE_TIMESPEED_MOD=${ENABLE_TIMESPEED_MOD-false}
@@ -119,12 +119,10 @@ services:
       - 5902:5900
       # NOVNC WEB
       - 5801:5800
-      # Game  
+      # Game
       - 24642:24642/udp
     volumes:
       # Saves go here now
       - ./valley_saves:/config/xdg/config/StardewValley/Saves
       # If you'd like to set an existing savegame before the first start otherwise this file will be edited when starting the first game
       - ./configs/autoload.json:/data/Stardew/game/Mods/AutoLoadGame/config.json
-
-      
