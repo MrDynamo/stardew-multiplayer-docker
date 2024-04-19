@@ -16,10 +16,15 @@
 1. Create a new branch based from ```local-build```
 2. Commit a fix by modifying the URLs to point to the updated game/smapi files
 
+## Backup previous stardew instance
+
+1. SSH into Docker Host 02 and cd into stardew-multiplayer-docker directory
+2. ```tar czf ../stardew_backups/[version].tar.gz .```
+
 ## Build new docker image
 
 1. SSH into Docker Host 02 and cd into stardew-multiplayer-docker directory
-2. Checkout the branch with the version fix: ```git checkout fix/v1.6.4```
+2. Checkout the branch with the version fix: ```git checkout fix/v1.6.4-4.0.7```
 3. Build new image: ```docker-compose build --no-cache```
 
 ## Run updated container
