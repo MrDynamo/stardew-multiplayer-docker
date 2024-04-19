@@ -13,7 +13,7 @@ RUN APP_ICON_URL=https://stardewcommunitywiki.com/mediawiki/images/4/48/Fiddlehe
 # Smapi - 4.0.7
 RUN mkdir -p /data/Stardew && \
     mkdir -p /data/nexus && \
-    wget https://files.dynamiclab.org/stardew_valley/game/1.6.4/game.tar.gz -qO /data/latest.tar.gz && \
+    wget https://files.dynamiclab.org/stardew_valley/game/1.6.4.hotfix.1/game.tar.gz -qO /data/latest.tar.gz && \
     tar xf /data/latest.tar.gz -C /data/Stardew && \
     rm /data/latest.tar.gz 
 
