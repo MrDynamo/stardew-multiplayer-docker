@@ -9,10 +9,11 @@ RUN apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq
 RUN APP_ICON_URL=https://stardewcommunitywiki.com/mediawiki/images/4/48/Fiddlehead_Fern.png && \
     install_app_icon.sh "$APP_ICON_URL"
 
-# Game + ModLoader 1.6.2 4.0.1
+# Stardew - 1.6.4
+# Smapi - 4.0.7
 RUN mkdir -p /data/Stardew && \
     mkdir -p /data/nexus && \
-    wget https://mirror.cloudcraft.info/Stardew_Valley_latest.tar.gz -qO /data/latest.tar.gz && \
+    wget https://files.dynamiclab.org/stardew_valley/game/1.6.4/game.tar.gz -qO /data/latest.tar.gz && \
     tar xf /data/latest.tar.gz -C /data/Stardew && \
     rm /data/latest.tar.gz 
 
@@ -22,9 +23,9 @@ RUN wget -qO dotnet.tar.gz https://download.visualstudio.microsoft.com/download/
     && rm dotnet.tar.gz \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet 
 
-RUN wget https://mirror.cloudcraft.info/SMAPI_latest.zip -qO /data/nexus.zip && \
+RUN wget https://files.dynamiclab.org/stardew_valley/smapi/4.0.7/smapi.zip -qO /data/nexus.zip && \
     unzip /data/nexus.zip -d /data/nexus/ && \
-    /bin/bash -c "SMAPI_NO_TERMINAL=true SMAPI_USE_CURRENT_SHELL=true echo -e \"2\n\n\" | /data/nexus/SMAPI\ 4.0.3\ installer/internal/linux/SMAPI.Installer --install --game-path \"/data/Stardew/game\"" || :
+    /bin/bash -c "SMAPI_NO_TERMINAL=true SMAPI_USE_CURRENT_SHELL=true echo -e \"2\n\n\" | /data/nexus/SMAPI\ 4.0.7\ installer/internal/linux/SMAPI.Installer --install --game-path \"/data/Stardew/game\"" || :
 
 
 # Add Mods & Scripts
