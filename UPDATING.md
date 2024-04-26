@@ -6,6 +6,7 @@
 2. Place on WSL instance in ~/stardew and run: ```cd ~/stardew && ./stardew_valley_1_6_4_24109_6654973489_72741.sh```
 3. Move into game directory: ```cd ~/GOG\ Games/Stardew\ Valley/ && tar czf game.tar.gz .```
 4. Place tarball into ```/docker_store/fileserver/stardew_valley/game/<version>/``` folder by copying from WSL to share in Windows
+5. Cleanup game directory: ```sudo rm -r  ~/GOG\ Games/Stardew\ Valley/```
 
 ## Bundling new version of smapi files
 
