@@ -3,7 +3,7 @@
 ## Bundling new version of game files
 
 1. Download latest Linux installer from [GOG](https://www.gog.com/en/account) on Windows
-2. Place on WSL instance in ~/ and run: ```cd ~ && ./stardew_valley_1_6_4_24109_6654973489_72741.sh```
+2. Place on WSL instance in ~/stardew and run: ```cd ~/stardew && ./stardew_valley_1_6_4_24109_6654973489_72741.sh```
 3. Move into game directory: ```cd ~/GOG\ Games/Stardew\ Valley/ && tar czf game.tar.gz .```
 4. Place tarball into ```/docker_store/fileserver/stardew_valley/game/<version>/``` folder by copying from WSL to share in Windows
 
