@@ -6,11 +6,11 @@ ENV APP_NAME="StardewValley"
 
 RUN apt-get update && apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq netcat procps && apt-get clean
 
-# Stardew - 1.6.4
-# Smapi - 4.0.7
+# Stardew - 1.6.8
+# Smapi - 4.0.8
 RUN mkdir -p /data/Stardew && \
     mkdir -p /data/nexus && \
-    wget --user-agent="Mozilla" https://files.dynamiclab.org/stardew_valley/game/1.6.4/game.tar.gz -qO /data/latest.tar.gz && \
+    wget --user-agent="Mozilla" https://files.dynamiclab.org/stardew_valley/game/1.6.8/game.tar.gz -qO /data/latest.tar.gz && \
     tar xf /data/latest.tar.gz -C /data/Stardew && \
     rm /data/latest.tar.gz 
 
